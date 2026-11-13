@@ -1,0 +1,246 @@
+{
+  "version": "22.0.0",
+  "releaseDate": "2026-11-13",
+  "frozen": true,
+  "sourceCommit": "c3c37941a0d0861c66c6cad91acd5b6646b6480e",
+  "sourceTag": "v22",
+  "sourceOrigin": "Latest V22 working-tree application snapshot, including Cash, OCR workflow, language switching and linked GL journal editing.",
+  "sourceArchive": "source-v22.zip",
+  "sourceArchiveSha256": "f7b34f11415f4b9a73136dfe7d09e84f9a82cd0910fd589b65b8d4d55b179c51",
+  "sourceFileCount": 503,
+  "nextDevelopmentVersion": "V23",
+  "checks": {
+    "typecheck": "passed",
+    "build": "passed; empty envDir and no VITE environment variables",
+    "targetedTests": {
+      "total": 118,
+      "passed": 118,
+      "failed": 0
+    },
+    "fullTests": {
+      "total": 1186,
+      "passed": 1116,
+      "failed": 70,
+      "notes": [
+        "Full suite is not green. Known failures include pre-localization static UI assertions and incomplete test dependency mocks; these have not been hidden or counted as passing."
+      ],
+      "failures": [
+        "editor separates immutable bank facts from editable matching data with an explicit non-algorithm preview",
+        "Bank status uses the shared portalled dropdown and the editor shows the same independent status",
+        "Bank toolbar uses the system plus action and opens the existing editor in create mode",
+        "statement action uses system design and opens a reviewable import, not IMPORTDATA history",
+        "tests/column-settings-groups.test.mjs",
+        "company chart shares the template title, back button, breadcrumbs and toolbar layout with Settings",
+        "account editor uses company-scoped cost center sources and keeps usage flags out of shared template editing",
+        "each company submenu opens, closes, and reopens without changing the active page",
+        "Payments navigation and New payment use a separate system screen with required controls",
+        "Save persists through the real local query contract and only changes the chosen company",
+        "tests/delete-buttons-lifecycle.test.mjs",
+        "both saved-document forms use the same read-only history, preserving form provenance during navigation",
+        "system menu trigger preserves the neutral action style and exposes expanded state to assistive technology",
+        "Actions opens a system confirmation for both imported documents and manual invoices",
+        "Document purpose offers only Purchase and Sale while preserving unchanged historical descriptions",
+        "card keeps Amount / Total Amount static and exposes the requested header controls",
+        "company document header omits Upload document without removing the existing import action",
+        "document information panel contains the upload guidance and the existing Dashboard ADDINFO shortcut",
+        "list separates selected-document transfer from file export and refreshes scope and rights at action time",
+        "export retains the centered system-choice dialog and existing down-arrow design; import still opens uploads",
+        "Reported issue is a plain description; document links and View open the document directly",
+        "system table controls and explicit issue-aware editing retain permission and accounting guards",
+        "queued corrections do not appear as ready-to-approve OCR documents",
+        "list, status filter, create and copy use shared processing states without changing historical data",
+        "list and Actions menu open the shared confirmation; Cancel does not run deletion",
+        "create and rename persist stable Type codes and dropdown labels while retaining legacy company choices",
+        "inactive types are omitted, cannot be recreated through +, and reappear after activation",
+        "duplicate, empty, invalid and stale catalog edits are rejected without mutating data",
+        "status migration preserves legacy edits and custom rows while adding missing workflow values",
+        "status names are presentation only: renaming Approved cannot remove its workflow meaning",
+        "a configured custom status saves into invoices and edits, and fresh deactivation prevents a new assignment",
+        "malformed catalogs fail closed and cannot be overwritten by settings saves",
+        "journal toolbar keeps column grouping while removing the requested controls",
+        "VAT closing is period-only; email controls belong to the separate reconciliation action",
+        "GL account bulk selection is opt-in, respects search and does not close the menu",
+        "credit selector uses the system dropdown, company-scoped load, and appears only for credit invoices",
+        "rendered totals contain one main summary and only a foreign-currency extra total",
+        "additional and attachments start collapsed, with one notes field, sales-only fields and preview controls",
+        "Invoice lines uses one editable table without Summary / Quantity switches and keeps existing controls",
+        "Split uses a compact aligned table with a fixed allocation column for any number of lines",
+        "Documents row and both editor Actions route credit notes directly to the shared invoice form",
+        "invoice header has a system status dropdown and save label follows the selected status",
+        "Invoices owns creation UI; the shared Documents register retains classification and access filtering",
+        "Create invoice uses the shared system Back button and preserves save-time disabling",
+        "Accounting defaults starts expanded and contains only the four requested system fields",
+        "the notifications bell is absent from every OCR area but retained outside OCR",
+        "notification chat opens inside the normal shell and Back retains the notification subtree and scroll",
+        "explicit Chats sidebar navigation exits the notification detour and opens the normal Chats view",
+        "opening a chat document and returning preserves the chat and its notification return path",
+        "opening a related chat still rechecks current chat access before navigating",
+        "tests/notification-details-panel.test.mjs",
+        "document type settings expose routing and completion validates before either destination",
+        "only Approve documents opts into shared delivery with system buttons and the same dialog",
+        "reported issues have a separate Workspace route and system breadcrumb, not an approval panel",
+        "legacy Workspace navigation resolves to an accessible child and never opens a separate parent page",
+        "Workspace uses the system connector between visible submenu items without dangling lines",
+        "read-only workflow reuses document extraction layout and guards writes and work-time logging",
+        "competing values are attached to their own learning record with supplier and field context",
+        "help is an icon-only Dashboard-style popup and the worker queue shortcut is removed",
+        "actual example adapter is repeat-safe across concurrent loads, reloads, edits and deletions",
+        "Processing documents is consistent in OCR navigation and heading",
+        "only enabled mandatory fields block approval; empty yellow and green remain optional",
+        "tests/reconciliation-gl-dialog.test.mjs",
+        "linked rows label each document side without inventing GL account codes",
+        "Document received opens the shared Reconcile form without saving; Cancel preserves Missing document",
+        "confirm receives and reconciles in one write and closes the shared form",
+        "an external storage change blocks confirmation without receiving or overwriting records",
+        "Document received respects company edit permission",
+        "tests/related-object-link.test.mjs",
+        "Reconciliation and all shared tables use one lifecycle, button and fullscreen sizing"
+      ]
+    },
+    "browser": "Published startup, asset hashes and source archive will be verified after deployment; not a complete UI regression test."
+  },
+  "limitations": [
+    "Frontend demonstration only; no secure backend authentication or shared production database.",
+    "Bank connection, payment sending, accounting transfer, OCR and email APIs are not connected.",
+    "Local .env, shared-data files, credentials and node_modules are excluded.",
+    "Pages versions on the same domain may share browser storage; use a separate browser profile for isolated testing."
+  ],
+  "artifacts": [
+    {
+      "path": ".nojekyll",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "assets/CompanyCashView-DnMvxZ3-.js",
+      "sha256": "5b1332bf052e40420989b9c6bea69971e11c546c032105c6f923d7b6323fc97e"
+    },
+    {
+      "path": "assets/CompanyWarehouseView-CRXlT2uj.js",
+      "sha256": "b9cc170f98f21d6cd8cc59b4df4fb8956c22ab1d895be717859b3306b4457139"
+    },
+    {
+      "path": "assets/FinancialStatementItemsView-CW5jPPS7.js",
+      "sha256": "a8331dea658e7827d91e567125b7de1ac1e9b1bc75a79564cdb9def9da51047b"
+    },
+    {
+      "path": "assets/WarehouseTable-Bs0QB0W_.js",
+      "sha256": "4a4981f0caa6d33150ef878834eb7bd492f29cb8492630f72ca8460cd2a34181"
+    },
+    {
+      "path": "assets/documentActionHistory-BSWadRCQ.js",
+      "sha256": "6c4a1e7a6a9c9a5baf9f28cd983570540ce134e48b0d99511fdfbf05a5b56ecd"
+    },
+    {
+      "path": "assets/html2canvas.esm-CBrSDip1.js",
+      "sha256": "b4f3add809a6d59f46260e8fd56cab240f3153def977386b230a839e8cb0b281"
+    },
+    {
+      "path": "assets/index-12ZK-NhM.css",
+      "sha256": "8c656f832b5449da8ebd77b684868b696e5703769e244a6f4851fac0669cca83"
+    },
+    {
+      "path": "assets/index-Duqyo0D7.js",
+      "sha256": "fe7595f2e096abeb524ecb90977dffe24036f263c72714dee9a1ff9fcdf4560e"
+    },
+    {
+      "path": "assets/index.es-C6e9EPqc.js",
+      "sha256": "2f9eafa34d1a72346ca51dffde8d15ba2989de58b918b7689214c75b719a0734"
+    },
+    {
+      "path": "assets/ocrMyTaskExamples-DikgsQqc.js",
+      "sha256": "4d2674bb7c69ce43fd06a7820aa6bd439a5269f3a1fb0eea655e75740c0f687e"
+    },
+    {
+      "path": "assets/ocrReviewExampleCompletion-C2zSYJnE.js",
+      "sha256": "7439c1d3d10f258e6675e1bda04d3e6af8c014eaf8eb4ccf20370294fef85b36"
+    },
+    {
+      "path": "assets/pdf.worker.min-yatZIOMy.mjs",
+      "sha256": "1baa1844c89c80a5b2797c916e75ab29254be46d8e9cb53cb6364d7aad84be36"
+    },
+    {
+      "path": "assets/purify.es-BnINGy_Y.js",
+      "sha256": "e1a7db8fd26de50139d42c7758c05111b45ee109c317b77816015927a8e01f7e"
+    },
+    {
+      "path": "image copy copy copy copy.png",
+      "sha256": "1bcb345d9a399c40f6a5cef40f432710413cf474bb43af1d83acaca3a1651311"
+    },
+    {
+      "path": "image copy copy copy.png",
+      "sha256": "969e70faeb718245b9dc9f254ae635ca4d84cce5fdc03d98bd83ebc9d419d54d"
+    },
+    {
+      "path": "image copy copy.png",
+      "sha256": "c0f01ddb60253804dd96f31accabf071226a94fb40771c4a441a9cce8a0a1414"
+    },
+    {
+      "path": "image copy.png",
+      "sha256": "0127df34479e357f8b7a7e8c4893ae1534040dfc8000451f58dc3b7644feaaa0"
+    },
+    {
+      "path": "image.png",
+      "sha256": "9a0193c47cfb318f9f2486c4ed6203dad90fb4d934a42f897733e45d400fed69"
+    },
+    {
+      "path": "images/image copy copy copy copy copy copy copy copy copy copy copy copy copy.png",
+      "sha256": "1cd8b3f76826b51c479cecb38d4222a4c3198b5010321711c21126833d1cc1f4"
+    },
+    {
+      "path": "images/image copy copy copy copy copy copy copy copy copy copy copy copy.png",
+      "sha256": "b9f1e92214f3a1704389200faf8ab81c5a2d865b2ce737cebca96ff46c55f5eb"
+    },
+    {
+      "path": "images/image copy copy copy copy copy copy copy copy copy copy copy.png",
+      "sha256": "d9868c806cdeb2259511272bdb26b51481d37a4f3ae8f3ba0d3674443e1518b9"
+    },
+    {
+      "path": "images/image copy copy copy copy copy copy copy copy copy copy.png",
+      "sha256": "9f3f7d86efb216941c8981545534bb4b8074619617ff959819ebdca1fcfea6ca"
+    },
+    {
+      "path": "images/image copy copy copy copy copy copy copy copy copy.png",
+      "sha256": "6d01bfb856ddbb65920d2a9596339354a37dbcfcee695ebd2f595bad8ebf7645"
+    },
+    {
+      "path": "images/image copy copy copy copy copy copy copy copy.png",
+      "sha256": "d16fe9c6470037a8c33cfb8f143d050475b060ecd9d49928adf67592995c9fcb"
+    },
+    {
+      "path": "images/image copy copy copy copy copy copy copy.png",
+      "sha256": "c15d9e12ef9a27a73dc62d49b43da230b663c61f82bde50e9cc0aaaffe11c998"
+    },
+    {
+      "path": "images/image copy copy copy copy copy copy.png",
+      "sha256": "06a8bd3647cdd3f135d79da62e820e014915e3fe8dd217a0b9a510eeb31c4337"
+    },
+    {
+      "path": "images/image copy copy copy copy copy.png",
+      "sha256": "57c84ab20f3b82f499081f9e980bf9a49ef48d3e38ffce72f725fce576c1ab8b"
+    },
+    {
+      "path": "images/image copy copy copy copy.png",
+      "sha256": "adac3ced5e6f950d6cd93276753b120c4a5dcc2b92c6bf852ddb9af422762711"
+    },
+    {
+      "path": "images/image copy copy copy.png",
+      "sha256": "cbe9189c04bba266a393bd2b0eab4048385722c3fe564b4ca07d7b8340aa7f3f"
+    },
+    {
+      "path": "images/image copy copy.png",
+      "sha256": "b7c16147303bb643399b896762c62195389982ae78ff583df539035b6d69f60a"
+    },
+    {
+      "path": "images/image copy.png",
+      "sha256": "16715a9825b0be3433316821c5fff24b05263c8bf49313c147dbc8f8abe11d72"
+    },
+    {
+      "path": "images/image.png",
+      "sha256": "16715a9825b0be3433316821c5fff24b05263c8bf49313c147dbc8f8abe11d72"
+    },
+    {
+      "path": "index.html",
+      "sha256": "e0d33d3ee28c9bce10683a094326d1c0b99740f8558b79c0606e786019f20d66"
+    }
+  ]
+}
